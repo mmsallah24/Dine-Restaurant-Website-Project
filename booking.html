@@ -8,59 +8,119 @@
     <link href="/src/app.css" rel="stylesheet">
     <script src="./src/main.js" defer></script>
 </head>
-<body>
-   <header class="bg-[url(/images/booking/hero-bg-desktop.jpg)]">
-    <nav>
-        <img src="./images/logo.svg" alt="">
+<body class="mx-auto max-w-7xl font-body text-[#17192B] bg-white">
+    <!-- HERO SECTION -->
+   <header class="relative bg-[url(/images/booking/hero-bg-desktop.jpg)] bg-cover bg-center text-white">
+    <nav class="py-10 px-6">
+        <div class="logo-wrapper">
+            <a href="index.html">
+                <img src="./images/logo.svg" alt="Dine Logo" class="w-32">
+            </a>
+        </div>
     </nav>
 
-    <div>
-        <h1>Reservations</h1>
+    <div class="px-6 pb-24 max-w-lg space-y-6">
+        <h1 class="text-5xl font-semibold leading-tight tracking-tight">Reservations</h1>
 
-        <p>
+        <p class="text-[#E1E2E5] text-base leading-relaxed">
              We can’t wait to host you. If you have any special requirements please feel free to 
   call on the phone number below. We’ll be happy to accommodate you.
         </p>
     </div>
    </header>
 
-   <main>
-    <div>
+   <!-- MAIN FORM SECTION -->
+  <main class="relative bg-white px-6 py-24 flex flex-col items-center">
+    <form id="reservationForm" class="bg-white shadow-xl p-10 w-full max-w-md space-y-8 rounded-md absolute -top-60 right-28">
+      <!-- NAME -->
+      <div>
+        <label for="name" class="block text-[#5C6779] text-sm mb-1">Name</label>
+        <input type="text" id="name" name="name"
+          class="w-full border-b border-[#5C6779] focus:border-[#17192B] focus:outline-none py-2 text-sm placeholder-[#5C6779] transition-all"
+          placeholder="John Apples" required>
+        <p id="error-name" class="hidden text-xs text-[#B54949] mt-1">This field is required</p>
+      </div>
 
-    </div>
+      <!-- EMAIL -->
+      <div>
+        <label for="email" class="block text-[#5C6779] text-sm mb-1">Email</label>
+        <input type="email" id="email" name="email"
+          class="w-full border-b border-[#5C6779] focus:border-[#17192B] focus:outline-none py-2 text-sm placeholder-[#5C6779] transition-all"
+          placeholder="example@email.com" required>
+        <p id="error-email" class="hidden text-xs text-[#B54949] mt-1">Please enter a valid email</p>
+      </div>
 
-    <form action="">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
+      <!-- DATE -->
+      <div>
+        <label for="date" class="block text-[#5C6779] text-sm mb-1">Pick a date</label>
+        <input type="date" id="date" name="date"
+          class="w-full border-b border-[#5C6779] focus:border-[#17192B] focus:outline-none py-2 text-sm text-[#5C6779] transition-all"
+          required>
+        <p id="error-date" class="hidden text-xs text-[#B54949] mt-1">This field is incomplete</p>
+      </div>
 
-        <label for="Email">Email</label>
-        <input type="email" id="email" name="email" required>
+      <!-- TIME -->
+      <div>
+        <label for="time" class="block text-[#5C6779] text-sm mb-1">Pick a time</label>
+        <div class="flex items-center gap-4">
+          <input type="time" id="time" name="time"
+            class="w-full border-b border-[#5C6779] focus:border-[#17192B] focus:outline-none py-2 text-sm text-[#5C6779] transition-all"
+            required>
 
-        <label for="date">Pick a date</label>
-        <input type="date" id="date" name="date" required>
+          <!-- AM/PM DROPDOWN -->
+          <div class="relative w-24">
+            <div id="ampmToggle"
+              class="flex items-center justify-between border-b border-[#5C6779] py-2 cursor-pointer select-none">
+              <span id="ampmValue" class="text-sm text-[#5C6779]">AM</span>
+              <img id="arrowIcon" src="./images/icons/icon-arrow.svg" alt="Dropdown Arrow" class="w-3">
+            </div>
+            <ul id="ampmList"
+              class="hidden absolute left-0 w-full bg-white border border-[#E1E2E5] rounded-md shadow-md mt-2 z-10">
+              <li class="px-3 py-2 hover:bg-[#E1E2E5] text-sm cursor-pointer">AM</li>
+              <li class="px-3 py-2 hover:bg-[#E1E2E5] text-sm cursor-pointer">PM</li>
+            </ul>
+          </div>
+        </div>
+        <p id="error-time" class="hidden text-xs text-[#B54949] mt-1">Please select a valid time</p>
+      </div>
 
-        <label for="time">Pick a time</label>
-        <input type="time" id="time" name="time" required>
+      <!-- GUESTS -->
+      <div>
+        <label class="block text-[#5C6779] text-sm mb-2">Number of people</label>
+        <div class="flex items-center justify-between border-b border-[#5C6779] py-2">
+          <img id="decrement" src="./images/icons/icon-minus.svg" alt="Minus Icon" class="cursor-pointer w-3 h-3">
+          <span id="guestCount" class="text-sm text-[#17192B] font-medium">4 people</span>
+          <img id="increment" src="./images/icons/icon-plus.svg" alt="Plus Icon" class="cursor-pointer w-3 h-3">
+        </div>
+        <p id="error-guests" class="hidden text-xs text-[#B54949] mt-1">Please enter at least one guest</p>
+      </div>
 
-        <label for="Guests">People</label>
-        <input type="number" id="Guests" name="Guests" min="1" required>
-
-        <button type="submit">Make Reservation</button>
+      <!-- BUTTON -->
+      <button type="submit"
+        class="bg-[#17192B] text-white hover:bg-white hover:text-[#111111] box-border border border-[#111111] text-sm font-semibold uppercase tracking-wide py-3 px-6 w-full rounded-md transition-all">
+        Make Reservation
+      </button>
     </form>
-   </main>
 
-   <footer>
+    <!-- Decorative Patterns -->
+    <img src="./images/patterns/pattern-curve-bottom-right.svg" alt="Curve" class="absolute -top-0.5 left-0 w-[610px]">
+    <img src="./images/patterns/pattern-lines.svg" alt="Lines" class="absolute ">
+  </main>
+
+   <footer class="bg-[#111111] text-white py-16 px-6 grid gap-10 text-center md:text-left md:grid-cols-3">
     <div>
-      <img src="./images/logo.svg" alt="">
+        <a href="index.html">
+            <img src="./images/logo.svg" alt="Dine Logo" class="w-24 mx-auto md:mx-0">
+        </a>
     </div>
 
-    <div>
+    <div class="uppercase font-extralight">
       <h4>Marthwaite, Sedbergh</h4>
       <h4>Cumbria</h4>
       <h4>+00 44 123 4567</h4>
     </div>
 
-    <div>
+    <div class="uppercase font-extralight">
       <h4>Open Times</h4>
       <h4>Mon - Fri: 09:00 AM - 10:00 PM</h4>
       <h4>Sat - Sun: 09:00 AM - 11:30 PM</h4>
