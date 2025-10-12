@@ -1,42 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frontend Mentor | Dine Website Challenge</title>
-    <link href="/src/app.css" rel="stylesheet">
-    <script src="./src/main.js" defer></script>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontend Mentor | Dine Website Challenge</title>
+  <link href="/src/app.css" rel="stylesheet">
+  <script src="./src/main.js" defer></script>
 </head>
+
 <body class="mx-auto max-w-7xl font-body text-[#17192B] bg-white">
-    <!-- HERO SECTION -->
-   <header class="relative bg-[url(/images/booking/hero-bg-desktop.jpg)] bg-cover bg-center text-white">
+  <!-- HERO SECTION -->
+  <header class="relative bg-[url(/images/booking/hero-bg-desktop.jpg)] bg-cover bg-center text-white">
     <nav class="py-10 px-6">
-        <div class="logo-wrapper">
-            <a href="index.html">
-                <img src="./images/logo.svg" alt="Dine Logo" class="w-32">
-            </a>
-        </div>
+      <div class="logo-wrapper">
+        <a href="index.html">
+          <img src="./images/logo.svg" alt="Dine Logo" class="w-32">
+        </a>
+      </div>
     </nav>
 
     <div class="px-6 pb-24 max-w-lg space-y-6">
-        <h1 class="text-5xl font-semibold leading-tight tracking-tight">Reservations</h1>
+      <h1 class="text-5xl font-semibold leading-tight tracking-tight">Reservations</h1>
 
-        <p class="text-[#E1E2E5] text-base leading-relaxed">
-             We can’t wait to host you. If you have any special requirements please feel free to 
-  call on the phone number below. We’ll be happy to accommodate you.
-        </p>
+      <p class="text-[#E1E2E5] text-base leading-relaxed">
+        We can’t wait to host you. If you have any special requirements please feel free to
+        call on the phone number below. We’ll be happy to accommodate you.
+      </p>
     </div>
-   </header>
+  </header>
 
-   <!-- MAIN FORM SECTION -->
-  <main class="relative bg-white px-6 py-24 flex flex-col items-center">
-    <form id="reservationForm" class="bg-white shadow-xl p-10 w-full max-w-md space-y-8 rounded-md absolute -top-60 right-28">
+  <!-- MAIN FORM SECTION -->
+  <main class="relative bg-white px-6 py-40 flex flex-col items-center">
+    <form id="reservationForm" class="bg-white shadow-xl p-8 w-full max-w-lg space-y-6 absolute -top-70 right-28 z-10">
       <!-- NAME -->
       <div>
         <label for="name" class="block text-[#5C6779] text-sm mb-1">Name</label>
         <input type="text" id="name" name="name"
-          class="w-full border-b border-[#5C6779] focus:border-[#17192B] focus:outline-none py-2 text-sm placeholder-[#5C6779] transition-all"
+          class="w-full border-b border-[#5C6779] focus:border-[#17192B] focus:outline-none py-2 text-sm placeholder-[#5C6779] transition-all cursor-pointer"
           placeholder="John Apples" required>
         <p id="error-name" class="hidden text-xs text-[#B54949] mt-1">This field is required</p>
       </div>
@@ -45,7 +47,7 @@
       <div>
         <label for="email" class="block text-[#5C6779] text-sm mb-1">Email</label>
         <input type="email" id="email" name="email"
-          class="w-full border-b border-[#5C6779] focus:border-[#17192B] focus:outline-none py-2 text-sm placeholder-[#5C6779] transition-all"
+          class="w-full border-b border-[#5C6779] focus:border-[#17192B] focus:outline-none py-2 text-sm placeholder-[#5C6779] transition-all cursor-pointer"
           placeholder="example@email.com" required>
         <p id="error-email" class="hidden text-xs text-[#B54949] mt-1">Please enter a valid email</p>
       </div>
@@ -54,7 +56,7 @@
       <div>
         <label for="date" class="block text-[#5C6779] text-sm mb-1">Pick a date</label>
         <input type="date" id="date" name="date"
-          class="w-full border-b border-[#5C6779] focus:border-[#17192B] focus:outline-none py-2 text-sm text-[#5C6779] transition-all"
+          class="w-full border-b border-[#5C6779] focus:border-[#17192B] focus:outline-none py-2 text-sm text-[#5C6779] transition-all cursor-pointer"
           required>
         <p id="error-date" class="hidden text-xs text-[#B54949] mt-1">This field is incomplete</p>
       </div>
@@ -64,7 +66,7 @@
         <label for="time" class="block text-[#5C6779] text-sm mb-1">Pick a time</label>
         <div class="flex items-center gap-4">
           <input type="time" id="time" name="time"
-            class="w-full border-b border-[#5C6779] focus:border-[#17192B] focus:outline-none py-2 text-sm text-[#5C6779] transition-all"
+            class="w-full border-b border-[#5C6779] focus:border-[#17192B] focus:outline-none py-2 text-sm text-[#5C6779] transition-all cursor-pointer"
             required>
 
           <!-- AM/PM DROPDOWN -->
@@ -97,21 +99,21 @@
 
       <!-- BUTTON -->
       <button type="submit"
-        class="bg-[#17192B] text-white hover:bg-white hover:text-[#111111] box-border border border-[#111111] text-sm font-semibold uppercase tracking-wide py-3 px-6 w-full rounded-md transition-all">
+        class="bg-[#17192B] text-white hover:bg-white hover:text-[#111111] box-border border border-[#111111] text-sm font-semibold uppercase tracking-wide py-3 px-6 w-full transition-all cursor-pointer">
         Make Reservation
       </button>
     </form>
 
     <!-- Decorative Patterns -->
-    <img src="./images/patterns/pattern-curve-bottom-right.svg" alt="Curve" class="absolute -top-0.5 left-0 w-[610px]">
-    <img src="./images/patterns/pattern-lines.svg" alt="Lines" class="absolute ">
+    <img src="./images/patterns/pattern-curve-bottom-right.svg" alt="Curve" class="absolute inset-0">
+    <img src="./images/patterns/pattern-lines.svg" alt="Lines" class="absolute w-52 bottom-6">
   </main>
 
-   <footer class="bg-[#111111] text-white py-16 px-6 grid gap-10 text-center md:text-left md:grid-cols-3">
+  <footer class="bg-[#111111] text-white py-16 px-6 grid gap-10 text-center md:text-left md:grid-cols-3">
     <div>
-        <a href="index.html">
-            <img src="./images/logo.svg" alt="Dine Logo" class="w-24 mx-auto md:mx-0">
-        </a>
+      <a href="index.html">
+        <img src="./images/logo.svg" alt="Dine Logo" class="w-24 mx-auto md:mx-0">
+      </a>
     </div>
 
     <div class="uppercase font-extralight">
@@ -127,4 +129,5 @@
     </div>
   </footer>
 </body>
+
 </html>
